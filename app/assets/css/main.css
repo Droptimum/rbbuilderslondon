@@ -1,0 +1,122 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Barlow', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Barlow Condensed', 'Barlow', ui-sans-serif, system-ui, sans-serif;
+
+  /* Greys — charcoal for dark surfaces, stone for light ones */
+  --color-ink-950: #121517;
+  --color-ink-900: #1a1e21;
+  --color-ink-800: #262b2f;
+  --color-ink-700: #353b40;
+  --color-ink-500: #5b6369;
+  --color-ink-300: #a9b0b5;
+  --color-ink-200: #d5d9dc;
+  --color-stone-100: #eef0ef;
+  --color-stone-50: #f6f7f6;
+
+  /* Greens — 600/700 carry white text on light surfaces, 400 is the accent on dark */
+  --color-brand-300: #9bd6a4;
+  --color-brand-400: #6cc07a;
+  --color-brand-500: #3f9a4e;
+  --color-brand-600: #2e7d3b;
+  --color-brand-700: #24642f;
+  --color-brand-800: #1b4b24;
+
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-white font-sans text-ink-900 antialiased;
+    font-size: 1.0625rem;
+    line-height: 1.65;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display font-semibold leading-[1.05] tracking-tight;
+    text-wrap: balance;
+  }
+
+  a, button, [role='button'], summary, label[for], select {
+    cursor: pointer;
+    touch-action: manipulation;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-brand-400);
+    outline-offset: 3px;
+  }
+
+  [id] {
+    scroll-margin-top: 7rem;
+  }
+}
+
+@layer components {
+  .container-site {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-3 font-display text-sm font-semibold uppercase tracking-[0.25em] text-brand-600;
+  }
+  .eyebrow::before {
+    content: '';
+    @apply h-0.5 w-8 bg-current;
+  }
+  .eyebrow-light {
+    @apply text-brand-400;
+  }
+
+  .btn {
+    @apply inline-flex min-h-12 items-center justify-center gap-3 px-6 font-display text-[0.95rem] font-semibold uppercase tracking-[0.2em] transition-[background-color,color,border-color,transform] duration-200 ease-out active:scale-[0.98];
+  }
+  .btn-primary {
+    @apply bg-brand-600 text-white hover:bg-brand-700;
+  }
+  .btn-accent {
+    @apply bg-brand-400 text-ink-950 hover:bg-brand-300;
+  }
+  .btn-outline-light {
+    @apply border-2 border-brand-400 text-brand-400 hover:bg-brand-400 hover:text-ink-950;
+  }
+  .btn-outline-dark {
+    @apply border-2 border-ink-900 text-ink-900 hover:bg-ink-900 hover:text-white;
+  }
+
+  .slant-panel {
+    clip-path: polygon(0 0, 100% 0, calc(100% - 2.5rem) 100%, 0 100%);
+  }
+}
+
+/* Scroll reveal — content is visible without JS; the plugin only adds the hidden state once it runs */
+.reveal {
+  opacity: 0;
+  transform: translateY(1.25rem);
+  transition: opacity 0.6s var(--ease-out-soft), transform 0.6s var(--ease-out-soft);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}

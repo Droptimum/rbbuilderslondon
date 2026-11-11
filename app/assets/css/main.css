@@ -19,7 +19,7 @@
   --color-brand-300: #9bd6a4;
   --color-brand-400: #6cc07a;
   --color-brand-500: #3f9a4e;
-  --color-brand-600: #2e7d3b;
+  --color-brand-600: #2c7a39; /* 4.6:1 on stone-100 (WCAG AA) */
   --color-brand-700: #24642f;
   --color-brand-800: #1b4b24;
 

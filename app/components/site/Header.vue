@@ -56,7 +56,6 @@ watch(open, (v) => {
         <NuxtLink
           to="/"
           class="relative -ml-4 flex h-full items-center bg-ink-950 pl-4 pr-14 sm:-ml-6 sm:pl-6 lg:-ml-8 lg:pl-8 slant-panel"
-          aria-label="RB Builders London, home"
         >
           <AppLogo />
         </NuxtLink>

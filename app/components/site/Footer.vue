@@ -10,7 +10,7 @@ const year = new Date().getFullYear()
   <footer class="bg-ink-950 text-ink-300">
     <div class="container-site grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
       <div>
-        <NuxtLink to="/" aria-label="RB Builders London, home" class="inline-block">
+        <NuxtLink to="/" class="inline-block">
           <AppLogo />
         </NuxtLink>
         <p class="mt-6 max-w-xs">

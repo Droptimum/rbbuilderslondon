@@ -55,7 +55,12 @@ function restart() {
 
 watch(playing, restart)
 
+// Only the first slide is in the initial HTML; each later slide is mounted one step ahead so it's loaded before it fades in.
+const mounted = ref(1)
+watch(index, (i) => (mounted.value = Math.max(mounted.value, i + 2)))
+
 onMounted(() => {
+  mounted.value = 2
   reduceMotion.value = window.matchMedia('(prefers-reduced-motion: reduce)').matches
   paused.value = reduceMotion.value
   restart()
@@ -76,7 +81,7 @@ onBeforeUnmount(() => clearInterval(timer))
     <!-- Images: full-bleed on mobile, right-hand panel on desktop -->
     <div class="absolute inset-0 -z-10 lg:left-[38%]">
       <NuxtPicture
-        v-for="(slide, i) in slides"
+        v-for="(slide, i) in slides.slice(0, mounted)"
         :key="slide.image"
         :src="slide.image"
         :alt="i === index ? slide.alt : ''"

@@ -9,7 +9,7 @@ import { testimonials } from '~/data/testimonials'
       <div class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
         <SectionHeading eyebrow="Client feedback" title="What our clients say" />
         <NuxtLink to="/client-feedback" class="btn btn-outline-dark self-start md:self-auto">
-          Read more
+          Read all reviews
           <ArrowRight class="size-4" aria-hidden="true" />
         </NuxtLink>
       </div>

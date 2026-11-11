@@ -21,6 +21,5 @@ withDefaults(defineProps<{ tone?: 'light' | 'dark' }>(), { tone: 'light' })
         <span :class="tone === 'light' ? 'text-ink-300' : 'text-ink-500'">London</span>
       </span>
     </span>
-    <span class="sr-only">RB Builders London</span>
   </span>
 </template>

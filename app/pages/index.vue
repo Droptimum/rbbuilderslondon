@@ -25,6 +25,7 @@ usePageSeo({
     </section>
 
     <HomeProcess />
+    <HomePaymentPlan />
     <HomeTestimonials />
     <HomePromise />
     <CtaBand />

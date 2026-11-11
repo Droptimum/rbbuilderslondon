@@ -26,7 +26,10 @@ usePageSeo({
 
         <div id="quote" class="bg-white p-6 shadow-xl shadow-ink-950/10 ring-1 ring-ink-200 sm:p-10">
           <h2 class="text-3xl uppercase md:text-4xl">Request a free quote</h2>
-          <p class="mt-2 mb-8 text-ink-500">We’ll get back to you as soon as we can.</p>
+          <p class="mt-2 text-ink-500">We’ll get back to you as soon as we can.</p>
+          <p class="mt-4 mb-8 border-l-4 border-brand-600 bg-stone-50 px-4 py-3 text-ink-700">
+            Short of the full budget? Pay 70% upfront and the remaining 30% in monthly instalments over 6–12 months, with no interest or fees.
+          </p>
           <ContactForm />
         </div>
       </div>

@@ -11,12 +11,13 @@ defineProps<{
 
 <template>
   <section class="relative isolate overflow-hidden bg-ink-950 text-white">
-    <img
+    <NuxtPicture
       :src="image"
       alt=""
       width="800"
       height="600"
-      class="absolute inset-y-0 right-0 -z-10 h-full w-full object-cover opacity-40 lg:w-3/5 lg:opacity-70"
+      sizes="xs:100vw lg:60vw"
+      :img-attrs="{ class: 'absolute inset-y-0 right-0 -z-10 h-full w-full object-cover opacity-40 lg:w-3/5 lg:opacity-70' }"
     />
     <div class="absolute inset-0 -z-10 bg-gradient-to-r from-ink-950 via-ink-950/90 to-ink-950/30 lg:via-ink-950/80" aria-hidden="true" />
     <div class="container-site py-20 md:py-28">

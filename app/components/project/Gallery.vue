@@ -29,13 +29,14 @@ function onKey(e: KeyboardEvent) {
           class="group relative block aspect-[4/3] w-full overflow-hidden bg-ink-900"
           @click="open(i)"
         >
-          <img
+          <NuxtPicture
             :src="p.src"
             :alt="p.alt"
             width="800"
             height="600"
             loading="lazy"
-            class="size-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+            sizes="xs:50vw md:33vw xl:400px"
+            :img-attrs="{ class: 'size-full object-cover transition-transform duration-500 ease-out group-hover:scale-105' }"
           />
           <span class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink-950/90 to-transparent p-4 pt-10 text-left font-display text-sm font-semibold uppercase tracking-[0.15em] text-white md:text-base">
             {{ p.caption }}
@@ -53,7 +54,8 @@ function onKey(e: KeyboardEvent) {
       @click.self="dialog?.close()"
     >
       <div class="relative w-[min(92vw,64rem)]">
-        <img :src="items[active]!.src" :alt="items[active]!.alt" width="800" height="600" class="w-full" />
+        <!-- lazy: the closed dialog isn't rendered, so the full-size photo only loads when opened -->
+        <NuxtPicture :src="items[active]!.src" :alt="items[active]!.alt" width="800" height="600" loading="lazy" sizes="xs:92vw lg:1024px" :img-attrs="{ class: 'w-full' }" />
         <p class="mt-3 font-display text-lg uppercase tracking-[0.15em] text-white">
           {{ items[active]!.caption }}
           <span class="text-ink-300"> · {{ active + 1 }} / {{ items.length }}</span>

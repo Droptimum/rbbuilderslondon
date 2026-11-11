@@ -24,14 +24,15 @@ defineProps<{ service: Service; index: number; total: number }>()
       </div>
 
       <div v-reveal="100">
-        <img
+        <NuxtPicture
           v-if="service.image"
           :src="service.image.src"
           :alt="service.image.alt"
           width="800"
           height="600"
           loading="lazy"
-          class="mb-8 aspect-[4/3] w-full object-cover"
+          sizes="xs:100vw lg:600px"
+          :img-attrs="{ class: 'mb-8 aspect-[4/3] w-full object-cover' }"
         />
         <div class="bg-ink-900 p-8 text-white md:p-10">
           <h3 class="font-display text-xl uppercase tracking-[0.2em] text-brand-400">What’s included</h3>

@@ -75,17 +75,23 @@ onBeforeUnmount(() => clearInterval(timer))
   >
     <!-- Images: full-bleed on mobile, right-hand panel on desktop -->
     <div class="absolute inset-0 -z-10 lg:left-[38%]">
-      <img
+      <NuxtPicture
         v-for="(slide, i) in slides"
         :key="slide.image"
         :src="slide.image"
         :alt="i === index ? slide.alt : ''"
         width="800"
         height="600"
-        :fetchpriority="i === 0 ? 'high' : 'low'"
+        sizes="xs:100vw lg:62vw"
+        :preload="i === 0 ? { fetchPriority: 'high' } : false"
         :loading="i === 0 ? 'eager' : 'lazy'"
-        class="absolute inset-0 size-full object-cover transition-[opacity,transform] duration-[1200ms] ease-out"
-        :class="i === index ? 'scale-100 opacity-100' : 'scale-105 opacity-0'"
+        :img-attrs="{
+          fetchpriority: i === 0 ? 'high' : 'low',
+          class: [
+            'absolute inset-0 size-full object-cover transition-[opacity,transform] duration-[1200ms] ease-out',
+            i === index ? 'scale-100 opacity-100' : 'scale-105 opacity-0',
+          ],
+        }"
       />
       <div class="absolute inset-0 bg-gradient-to-t from-ink-950 via-ink-950/70 to-ink-950/30 lg:bg-gradient-to-r lg:from-ink-950 lg:via-ink-950/40 lg:to-transparent" aria-hidden="true" />
     </div>

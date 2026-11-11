@@ -3,6 +3,15 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineNuxtConfig({
   compatibilityDate: '2026-10-01',
   devtools: { enabled: false },
+  modules: ['@nuxt/image'],
+  // Screens are Tailwind's defaults (built in) plus `xs`, the mobile-first base for `sizes`:
+  // a bare `sizes="100vw"` is read as a 1px screen in @nuxt/image v2, so always prefix with `xs:`.
+  // Sources are 800px wide; IPX never upscales, so larger srcset widths just reuse 800px.
+  image: {
+    format: ['avif', 'webp'],
+    quality: 75,
+    screens: { xs: 320 },
+  },
   css: ['~/assets/css/main.css'],
   vite: {
     plugins: [tailwindcss()],

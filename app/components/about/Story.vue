@@ -19,9 +19,9 @@
         </div>
       </div>
       <div v-reveal="100" class="grid grid-cols-2 gap-4 self-start">
-        <img src="/images/projects/vanity-unit.jpg" alt="Gloss vanity unit with vessel basin" width="800" height="600" loading="lazy" class="col-span-2 aspect-[4/3] w-full object-cover" />
-        <img src="/images/projects/mosaic-basin.jpg" alt="Navy mosaic cloakroom with square basin" width="800" height="600" loading="lazy" class="aspect-square w-full object-cover" />
-        <img src="/images/projects/stone-basin.jpg" alt="Stone-clad basin plinth" width="800" height="600" loading="lazy" class="aspect-square w-full object-cover" />
+        <NuxtPicture src="/images/projects/vanity-unit.jpg" alt="Gloss vanity unit with vessel basin" width="800" height="600" loading="lazy" sizes="xs:100vw lg:560px" :img-attrs="{ class: 'col-span-2 aspect-[4/3] w-full object-cover' }" />
+        <NuxtPicture src="/images/projects/mosaic-basin.jpg" alt="Navy mosaic cloakroom with square basin" width="800" height="600" loading="lazy" sizes="xs:50vw lg:280px" :img-attrs="{ class: 'aspect-square w-full object-cover' }" />
+        <NuxtPicture src="/images/projects/stone-basin.jpg" alt="Stone-clad basin plinth" width="800" height="600" loading="lazy" sizes="xs:50vw lg:280px" :img-attrs="{ class: 'aspect-square w-full object-cover' }" />
       </div>
     </div>
   </section>

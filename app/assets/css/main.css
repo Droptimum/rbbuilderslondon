@@ -56,6 +56,11 @@
   [id] {
     scroll-margin-top: 7rem;
   }
+
+  /* <NuxtPicture> wraps each <img>; keep the wrapper out of layout so the img's own classes apply as before */
+  picture {
+    display: contents;
+  }
 }
 
 @layer components {

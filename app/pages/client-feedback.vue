@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { testimonials } from '~/data/testimonials'
 
-useSeoMeta({
+usePageSeo({
   title: 'Client feedback',
   description: 'What homeowners in Walthamstow and East London say about working with RB Builders London.',
 })

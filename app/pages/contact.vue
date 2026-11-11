@@ -1,5 +1,5 @@
 <script setup lang="ts">
-useSeoMeta({
+usePageSeo({
   title: 'Contact us',
   description: 'Get a free quote from RB Builders London. Call, email, WhatsApp or send us a message about your project in Walthamstow or East London.',
 })

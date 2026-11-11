@@ -2,7 +2,7 @@
 import { services } from '~/data/services'
 import { projects } from '~/data/projects'
 
-useSeoMeta({
+usePageSeo({
   title: 'Services',
   description:
     'Bathrooms, kitchens, extensions, loft conversions and refurbishments in Walthamstow and East London, delivered by one team from start to finish.',

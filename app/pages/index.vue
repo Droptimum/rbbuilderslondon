@@ -1,14 +1,10 @@
 <script setup lang="ts">
 import { projects } from '~/data/projects'
-import { site } from '~/data/site'
 
-useSeoMeta({
+usePageSeo({
   title: 'Builders in Walthamstow, East London',
   description:
     'RB Builders London — bathrooms, kitchens, extensions, loft conversions and refurbishments in Walthamstow and East London. Free visits and itemised quotes.',
-  ogTitle: 'RB Builders London',
-  ogDescription: 'Bathrooms, kitchens, extensions, loft conversions and refurbishments in Walthamstow and East London.',
-  ogImage: `${site.url}/images/projects/walk-in-shower.jpg`,
 })
 </script>
 

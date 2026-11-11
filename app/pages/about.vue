@@ -1,5 +1,5 @@
 <script setup lang="ts">
-useSeoMeta({
+usePageSeo({
   title: 'About us',
   description:
     'RB Builders London is a Walthamstow building company delivering bathrooms, kitchens, extensions, lofts and refurbishments across East London.',

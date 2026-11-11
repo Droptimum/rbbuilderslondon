@@ -4,8 +4,41 @@
     {
       "name": "nuxt-dev",
       "runtimeExecutable": "bash",
-      "runtimeArgs": ["-lc", "source ~/.nvm/nvm.sh && nvm use 22 >/dev/null && npx nuxt dev --port 3000"],
+      "runtimeArgs": [
+        "-lc",
+        "source ~/.nvm/nvm.sh && nvm use 22 >/dev/null && npx nuxt dev --port 3000"
+      ],
       "port": 3000
+    },
+    {
+      "name": "sightonsite",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": [
+        "-lc",
+        "cd /Users/jakubmlynarczyk/Sites/private/siteonsight && source ~/.nvm/nvm.sh && nvm use 22 >/dev/null && npx nuxt dev --port 3100"
+      ],
+      "port": 3100
+    },
+    {
+      "name": "sightonsite-static",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "3200",
+        "--directory",
+        "/Users/jakubmlynarczyk/Sites/private/siteonsight/.output/public"
+      ],
+      "port": 3200
+    },
+    {
+      "name": "celebdriver-dev",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": [
+        "-lc",
+        "cd /Users/jakubmlynarczyk/Sites/private/celebdriver && source ~/.nvm/nvm.sh && nvm use 22 >/dev/null && npx nuxt dev --port 3300"
+      ],
+      "port": 3300
     }
   ]
 }

@@ -11,6 +11,6 @@
       <slot />
     </main>
     <SiteFooter />
-    <WhatsAppButton />
+    <SiteWhatsAppButton />
   </div>
 </template>
